@@ -1,0 +1,31 @@
+version:  '3'
+services:
+
+  ##
+  # product service
+  ##
+  microservice_product_fpm:
+    build: ./microservices/product/php-fpm/
+    volumes:
+      - ../source/product:/var/www/html
+    expose:
+      - 9000
+
+  microservice_product_nginx:
+    build: ./microservices/product/nginx/
+    volumes:
+      - ../source/user:/var/www/html
+    ports:
+      - 8081:80
+      - 9091:9090
+
+  microservice_product_database:
+    build: ./microservices/product/database/
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=mysecret
+      - MYSQL_DATABASE=users
+      - MYSQL_USER=secret
+      - MYSQL_PASSWORD=mysecret
+    ports:
+      - 6667:3306

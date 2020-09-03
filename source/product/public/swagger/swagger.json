@@ -1,0 +1,12 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "User Service Documentation",
+        "description": "This is the User Service of Mercury",
+        "termsOfService": "",
+        "contact": {
+            "email": "ernest.benson.igwe@gmail.com"
+        },
+        "version": "1.0.0"
+    }
+}
