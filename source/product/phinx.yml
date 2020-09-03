@@ -16,8 +16,8 @@ environments:
 
     development:
         adapter: mysql
-        host: microservice_user_database
-        name: users
+        host: microservice_product_database
+        name: products
         user: root
         pass: mysecret
         port: 3306
