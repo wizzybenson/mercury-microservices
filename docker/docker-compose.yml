@@ -14,7 +14,7 @@ services:
   microservice_product_nginx:
     build: ./microservices/product/nginx/
     volumes:
-      - ../source/user:/var/www/html
+      - ../source/product:/var/www/html
     ports:
       - 8081:80
       - 9091:9090
@@ -24,8 +24,8 @@ services:
     command: --default-authentication-plugin=mysql_native_password
     environment:
       - MYSQL_ROOT_PASSWORD=mysecret
-      - MYSQL_DATABASE=users
-      - MYSQL_USER=secret
+      - MYSQL_DATABASE=products
+      - MYSQL_USER=root
       - MYSQL_PASSWORD=mysecret
     ports:
       - 6667:3306
